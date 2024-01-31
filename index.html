@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="Fee_Project.css" rel="stylesheet" type="text/css">
+    </head>
+    <style>
+        ul
+{
+    background-color:red;
+    list-style-type: none;
+    border: 2px yellow solid;
+   padding: 30px;
+   height:25px;
+   font-size: 12px;
+   font-style:normal;
+}
+li
+{
+    float: left;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    float: left;
+}
+#container
+{
+    margin: 8%;
+    height: 200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    border: 2px solid gray;
+    padding-bottom: 5%;
+    row-gap: 0px;
+    column-gap: 2px;
+    
+}
+.item
+{
+    
+    background-color: white;
+
+}
+#a1{
+    background-color:yellow;
+    padding: 29px;
+    font-size:30PX;
+    height: 22PX;
+    font-style: normal;
+}
+#d1{
+    font-size: 30px;
+}
+#d2{
+    border:9px solid black;
+    height:0px;
+    width:0px;
+    font-size: 65px;
+    color:white;
+    background-color: red;
+    align-content: center;
+}
+#d3{
+    border:5px white solid;
+    height:auto;
+    width:450px;
+    color:black;
+    justify-content: center;
+    float:right;
+    
+}
+#d4{
+    display: none;
+    background-color:slategray;
+    color:white;
+}
+input{
+    font-size: 20px;
+}
+select{
+    font-size: 20px;
+}
+#e1{
+    background-color: #f2f2f2;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    /* Shiny effect */
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 4px;
+  }
+  
+  #e1:hover {
+    /* Shiny effect on hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  #e1:active {
+    /* Pressed effect */
+    transform: scale(0.95);
+  }
+  
+  #e1::before {
+    /* Pseudo-element for an icon */
+    content: "\f138";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+  }
+  
+  #e1.success {
+    /* Custom styles for success button */
+    background-color: #2ecc71;
+    color: #fff;
+  }
+  
+  #e1.warning {
+    /* Custom styles for warning button */
+    background-color: #f39c12;
+    color: #fff;
+  }
+    </style>
+    
+        <style>
+            /* CSS styles for the button */
+            .blink-button {
+                font-size: 50px;
+                padding: 30px 40px;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                animation: blink 2s infinite;
+            }
+    
+            @keyframes blink {
+                0% {
+                    background-color: red;
+                }
+                25% {
+                    background-color: blue;
+                }
+                50% {
+                    background-color: green;
+                }
+                75% {
+                    background-color: yellow;
+                }
+                100% {
+                    background-color: red;
+                }
+            }
+        </style>
+        <script>
+            function redirectToPage() {
+                window.location.href = "loginpage.html";
+            }
+        </script>
+    
+    <style>
+        /* CSS styles for the drop-down menus */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .dropdown select {
+            padding: 8px 16px;
+            font-size: 25px;
+            color: #f8f4f4;
+            background-color: transparent;
+            border: none;
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            z-index: 1;
+            background-color: #f1efef;
+            box-shadow: 0 2px 5px rgba(2, 2, 2, 0.2);
+            border-radius: 4px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+            color: #f4f1f1;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #181616;
+        }
+    </style>
+    <script>
+        // Function to handle the change event of the select dropdown
+        function handleDropdownChange(dropdownId) {
+            var selectedOption = document.getElementById(dropdownId).value;
+            var submenu = document.getElementById(dropdownId + "-submenu");
+
+            // Hide all submenus
+            var allSubmenus = document.getElementsByClassName("submenu");
+            for (var i = 0; i < allSubmenus.length; i++) {
+                allSubmenus[i].style.display = "none";
+            }
+
+            // Show the selected submenu
+            submenu.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <ul style="font-style:bold;">
+        <li class="dropdown">
+            <select id="l1" onchange="handleDropdownChange('l1')">
+                <option value="">ABOUT US</option>
+                
+            </select>
+            
+        </li>
+        <li class="dropdown">
+            <select id="l2" onchange="handleDropdownChange('l2')">
+                <option value="">UNDERGRADUATE PROGRAMS</option>
+                <option value="Computer Science Engineering">Computer Science Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+            </select>
+            
+        </li>
+        <li class="dropdown">
+            <select id="l3" onchange="handleDropdownChange('l3')">
+                <option value="">POST-GRADUATE PROGRAMS</option>
+                <option value="submenu1">MBA</option>
+                <option value="submenu2">M.Tech</option>
+                <option value="submenu3">M.Sc.Nursing</option>
+            </select>
+            
+        </li>
+        <li class="dropdown">
+            <select id="l4" onchange="handleDropdownChange('l4')">
+                <option value="">GLOBAL PROGRAMS</option>
+                <option value="submenu1">BBA-Trent University</option>
+                <option value="submenu2">Eng DeakinUniversity </option>
+                <option value="submenu3">Business Admin</option>
+            </select>
+
+        </li>
+        <li class="dropdown">
+            <select id="l5" onchange="handleDropdownChange('l5')">
+                <option value="">ONLINE PROGRAMS</option>
+                <option value="submenu1">MBA in Finance</option>
+                <option value="submenu2">MBA in Marketing</option>
+                <option value="submenu3">MBA withb ACCA</option>
+            </select>
+            
+        </li>
+        <li class="dropdown">
+            <select id="l6" onchange="handleDropdownChange('l6')">
+                <option value="">PHD.PROGRAMS</option>
+                <option value="submenu1">Applied Sciences</option>
+                <option value="submenu2">Nursing</option>
+                <option value="submenu3">Art & Design</option>
+            </select>
+            
+        </li>
+        <li class="dropdown">
+            <select id="l7" onchange="handleDropdownChange('l7')">
+                <option value="">SCHOLARSHIPS</option>
+                <option value="submenu1">Merit Based</option>
+                <option value="submenu2">Need-Based</option>
+                <option value="submenu3">Reservation</option>
+            </select>
+            
+        </li>
+        
+    </ul>
+    <style>
+        /* CSS styles for the exit button */
+        .exit-button {
+            font-size: 30px;
+            padding: 20px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            
+        }
+
+        .exit-button:hover {
+            background-color: darkred;
+            box-shadow: 0 0 10px rgba(49, 4, 4, 0.8);
+            animation: none; /* Disable blinking effect on hover */
+        }
+        
+        
+    </style>
+    <script>
+        function redirectToAnotherPage() {
+            // Redirect to another page
+            window.location.href = "scholarshippage.html";
+        }
+    </script>
+    
+   
+    <body>
+       
+        <br>
+        <br>
+        <div id="d1">
+        <h1 align="center"> At Chitkara University, you will discover an Energy that runs </h1>
+        <h1 align="center"> through Everything and Everyone. </h1> 
+        </div>
+        <div>
+            <p align="center">
+                <button class="blink-button" onclick="redirectToPage()">Admissions Open</button>
+            </p>
+        </div>
+        
+        <div id="container">
+            <div class="item"> <img src="img1.jpg" height="300px" width="400px"> </div>
+            <div class="item"> <img src="img2.jpg" height="300px" width="400px"> </div>
+            <div class="item"><img src="img3.jpg" height="300px" width="400px"> </div>
+            <div class="item"> <h2 STYLE="font-size: 30PX;"> Get Industry Ready </h2>
+                <p STYLE="font-size: 20PX;"> We have an intense focus on making <br> each and every graduate industry <br> ready and in order to make sure that <br>
+                    our students have access to latest <br>technology, we have collaborated<br> with major industries across 
+                    sectors<br> so our curriculum and innovation <br>labs are in sync with latest industry<br> trends. </p>
+                 <font color="red" STYLE="font-size: 20PX;" > Learn about our industry Partnerships >></font>
+                </div>
+            <div class="item"> <h2 STYLE="font-size: 30PX;"> Explore Passionately </h2>
+            <p STYLE="font-size: 20PX;"> Research isn’t just an idea, it’s a way of life at <br> CURIN, which supports diverse programs,<br>
+                 projects and centres with over 50 Cr in annual <br>research funding. We offer state-of-the-art <br>facilities, 
+                 collaborative work environments and<br> unparalleled experience solving real-world<br> problems.
+            </p><br><br>
+            <font color="red" style="font-size: 20PX;" > Learn about Research Opportunites >> </font>
+            </div>
+            <div class="item"> <h2 STYLE="font-size: 30PX;"> Start Me Up </h2>
+            <p STYLE="font-size: 20PX;"> Our world needs more entrepreneurs and<br> startups. That’s why Chitkara Innovation<br> Incubator connects students
+                 with resources from<br> design and prototyping to marketing and<br> funding which in turn, transforms startup ideas<br>
+                  into actions that make an impact.</p><br><br><br>
+                  <font color="red" STYLE="font-size: 20PX;"> Learn about Chitkara Startup Culture > ></font>
+            </div>
+            <div></div>
+            <div id="d3" align="center">
+            <p align="center">
+                <br><br>
+                
+                <button style="font-size: 30px; padding:20px;border-radius:25px;background-color: rgb(246, 25, 9);color:rgb(250, 249, 249);" id="b3" align="center" >Subscribe for latest updates</button>
+                    
+                <div id="d4"><br><h1>Be a part of India’s top rated University</h1><br>
+                <b><input type="text" name="uname" id="name" placeholder="Your name"><b></b><br><br></b>
+                <input type="text" name="Pnumber" id="Pnumber" placeholder="Your number"><br><br>
+                 <select name="P1" ><option placeholder="a"> Program</option><option value="a">MBA</option>
+                    <option value="a">MCA</option>
+                    <option value="a">BA</option>
+                    <option value="a">BE</option>
+                    <option value="a">Bsc</option>
+                    <option value="a">BCA</option>
+                    <option value="a">ME</option>
+                    <option value="a">Msc</option>
+                </select><br><br>
+                <select name="S1" ><option placeholder="a"> State</option><option value="a">Haryana</option>
+                    <option value="a">Punjab</option>
+                    <option value="a">Himachal</option>
+                    <option value="a">U.P</option>
+                    <option value="a">MP</option>
+                    <option value="a">West bengal</option>
+                    <option value="a">Tamil Nadu</option>
+                    <option value="a">Jammu Kashmir</option>
+                    <option value="a">Uttranchal</option>
+                    <option value="a">Rajasthan</option>
+                    <option value="a">Bihar</option>
+                    <option value="a">Karnataka</option>
+                    <option value="a">Kerala</option>
+                    <option value="a">Jharkhand</option>
+                    <option value="a">Gujrat</option>
+                    <option value="a">Assam</option>
+                    <option value="a">Tripura</option>
+                    <option value="a">Nagaland</option>
+                    <option value="a">Goa</option>
+                    <option value="a">Odisha</option>
+                    <option value="a">Andhra Pradesh</option>
+                    <option value="a">Arunachal Pradesh</option>
+                    <option value="a">Manipur</option>
+                    <option value="a">Mizoram</option>
+                </select><br><br>
+                <input type="submit" value="SUBMIT"><br> <br>
+                </b>
+                
+                <br>
+                <button style="font-size: 20px;background-color: black;color:white;" id="b4" align="center" >Click here to slide up</button>
+           </div> </div>
+        </div>
+        <br> <br> <br> <br> <br> <br> <br>
+        <br> <br>
+        <br> <br> <br> <br> <br> <br> <br>
+        <br> <br>
+        <br> <br> <br> <br> 
+        <br> <br> <br> <br> 
+        <br> <br> <br> <br> 
+
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <p align="center">
+        <!-- Rest of your HTML code -->
+
+    <p align="center">
+        <button class="exit-button" onclick="openPopup()">Exit</button>
+    </p>
+
+	<script src="jquery-3.7.0.min.js"> </script>
+    <script>
+		function exitButton() {
+            window.alert("Would You Like To ")
+			window.open("scholarshippage.html");
+		}
+        $('#b1').click(function(){
+                $('div#d2').animate({
+                    right:'690px',
+                    top:'400px',
+                    height:'150px',
+                    width:'650px',
+                })})
+        $('#b3').click(function(){
+            $('div#d4').css("display","block");
+        }) 
+        $('#b4').click(function(){
+            $('div#d4').slideUp("slow");                                     
+        })  
+        </script>
+        <style>
+    .popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity:0.9;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .popup-content {
+        background-image: url('sc.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 600px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .popup-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .popup-button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .popup-button-yes {
+        background-color: #4CAF50;
+    }
+
+    .popup-button-no {
+        background-color: #f44336;
+    }
+</style>
+
+<script>
+    function redirectToAnotherPage() {
+        window.location.href = "scholarshippage.html";
+    }
+
+    function openPopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = "flex";
+    }
+
+    function closePopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = "none";
+        window.location.href = "https://www.google.com";
+    }
+</script>
+
+
+
+<div class="popup" id="popup" style="display: none;">
+    <div class="popup-content">
+        <div>
+            <br><br><br><br><br>
+            <h1 style="background-color:whitesmoke; opacity:0.8;"><b>Would You Like to Apply For Scholarships?</b></h1>
+        </div>
+        <div class="popup-buttons">
+            <button class="popup-button popup-button-yes" style="font-size: 20px;" onclick="redirectToAnotherPage()">Yes</button>
+            <button class="popup-button popup-button-no" style="font-size: 20px;" onclick="closePopup()">No</button>
+        </div>
+    </div>
+</div>
+    
+        
+    </body>
+</html>

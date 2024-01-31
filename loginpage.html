@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>
+            password
+        </title>
+        <style>
+            #b1{
+            font-size: 30px;
+            padding: 15px 40px;
+            background-color:rgb(150, 209, 211);
+            color: black;
+            border: none;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            align-content: center;
+            }
+            input{
+                font-size: 35px;
+            }
+            select{
+                font-size: 25px;
+            }
+            #container{
+                display: grid;
+                row-gap: 10px;
+                column-gap: 10px;
+                align-content: center;
+              
+            }
+            #item1{
+                
+                grid-row-start: 2;
+                grid-row-end: 4;
+                font-size: 40px;
+            }
+            .grid{
+                background-color:red;
+                grid-row-start: 1;
+                grid-row-end: 4;
+            }
+        </style>
+        <script>
+            function validateform(){
+                var x=document.forms["myform"]["uname"].value;
+                var y=document.forms["myform"]["pwd"].value;
+                var c1=document.forms["myform"]["cpwd"].value;
+                var em=document.forms["myform"]["email"].value;
+                if(x=="" || y=="" || c1=="" || em==""){
+                    document.getElementById("error").innerHTML="required filled must be filled";
+                    document.getElementById("error").style.color="red";
+
+                    document.getElementById("name").style.bordercolor="red";
+                    document.getElementById("pwd").style.bordercolor="red";
+                    return false;
+                }
+            }
+            function matchpassword(){
+                var password=document.getElementById('pwd').value;
+                var cpassword=document.getElementById("cpwd").value;
+                if(password!=cpassword){
+                    document.getElementById('error').innerHTML="password should be same";
+                    document.getElementById("cpwd").style.borderColor="red";
+                    document.getElementById("error").style.color="red";
+                    document.getElementById("cpwd").value="";
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body align="center">
+        <div id="container">
+            <div id="item1" style="padding:230px">
+                <img src="logo.jpg" height="450px" width="450px"/> 
+            </div>
+            <div class="grid" style="padding:150px;background-color:beige;">
+        <div id="error"></div>
+        <form name="myform" method="post">
+        <b style="font-size: 30px;">Student Name: </b> <input type="text" name="uname" id="name"><br><br>
+        <b style="font-size: 30px;">Password: </b> <input type="password" name="pwd" id="pwd" onblur="Request"><br><br>
+        <b style="font-size: 30px;">Confirm Password: </b> <input type="password" name="cpwd" id="cpwd" onblur="Request"><br><br>
+        <b style="font-size: 30px;">Email: </b> <input type="email" name="email" id="email"><br><br>
+        <b style="font-size: 30px;">Phone Number: </b> <input type="Number" name="Pnumber" id="Pnumber"><br><br>
+        <b style="font-size: 30px;">Program: </b><select name="P1" >Program<option value="a"> Program</option><option value="a">MBA</option>
+            <option value="a">MCA</option>
+            <option value="a">BA</option>
+            <option value="a">BE</option>
+            <option value="a">Bsc</option>
+            <option value="a">BCA</option>
+            <option value="a">ME</option>
+            <option value="a">Msc</option>
+        </select><br><br>
+        <p align="center">
+            <br> <br> <br>
+        <button id="b1" onclick="validateform">Submit</button>
+        </p>
+        </form>
+        </div>
+        </div>
+        <H1 style="color:red;font-size: 47px;" align="center">EXPLORE YOUR POTENTIAL !!</H1>
+
+    </body>
+</html>

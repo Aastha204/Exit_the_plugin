@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <style>
+            input{
+                font-size: 25px;
+            }
+            select{
+                font-size: 25px;
+            }
+            a{
+                font-size: 25px;
+            }
+
+            #b1{
+            font-size: 30px;
+            padding: 15px 40px;
+            background-color:cadetblue;
+            color: black;
+            border: none;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            align-content: center;
+            }
+            #container{
+                display: grid;
+                row-gap: 10px;
+                column-gap: 10px;
+                align-content: center;
+              
+            }
+            #item1{
+                
+                grid-row-start: 1;
+                grid-row-end: 4;
+            }
+            .grid{
+                background-color:red;
+                grid-row-start: 1;
+                grid-row-end: 4;
+            }
+        </style>
+        <script>
+            function validateform(){
+                var x=document.forms["myform"]["uname"].value;
+                var y=document.forms["myform"]["pwd"].value;
+                var c1=document.forms["myform"]["uniname"].value;
+                var em=document.forms["myform"]["adiname"].value;
+                if(x=="" || y=="" || c1=="" || em==""){
+                    document.getElementById("error").innerHTML="required filled must be filled";
+                    document.getElementById("error").style.color="red";
+
+                    document.getElementById("name").style.bordercolor="red";
+                    document.getElementById("pwd").style.bordercolor="red";
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body align="center">
+        <div id="container">
+            <div id="item1" style="padding:230px;">
+                <img src="logo.jpg" height="450px" width="450px"/> 
+            </div>
+            <div class="grid" style="padding:150px;background-color:rgb(247, 246, 246);">
+        <div id="error" align="center"></div>
+        <form name="myform" method="post">
+        <b style="font-size: 30px;">Student Name : </b> <input type="text" name="uname" id="name"><br><br>
+        <b style="font-size: 30px;">Password : </b> <input type="password" name="pwd" id="pwd" onblur="Request"><br><br>
+        <b style="font-size: 30px;">University ID : </b><input type="text" name="uniname" id="uniname"><br><br>
+        <b style="font-size: 30px;">Admission No : </b><input type="text" name="aname" id="adname"><br><br>
+        <b style="font-size: 30px;">Percentage : </b><input type="text" name="aname" id="adname"><br><br>
+        <b style="font-size: 30px;">Type of Scholarship: </b><select id="l7" onchange="handleDropdownChange('l7')">
+            <option value="">Scholarship</option>
+            <option value="submenu1">Merit Based</option>
+            <option value="submenu2">Need-Based</option>
+            <option value="submenu3">Reservation</option>
+        </select><br> <br><br> <br> <br> 
+        <a href="loginpage.html" align="center">Don't have any account?<br>Create account now</a><br><br><br> <br> 
+        <p align="center"><button id="b1" align="center">Log In</button></p>
+        </form>
+        </div>
+        </div>
+        <H1 align="center" style="color:red;font-size: 47px;">EXPLORE YOUR POTENTIAL !!</H1>
+    </body>
+</html>

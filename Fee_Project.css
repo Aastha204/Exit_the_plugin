@@ -1,0 +1,125 @@
+ul
+{
+    background-color:red;
+    list-style-type: none;
+    border: 2px yellow solid;
+   padding: 30px;
+   height:25px;
+   font-size: 12px;
+   font-style:normal;
+}
+li
+{
+    float: left;
+    padding: 10px 17px;
+    color: white;
+    font-size: 12px;
+    float: left;
+}
+#container
+{
+    margin: 8%;
+    height: 200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    border: 2px solid gray;
+    padding-bottom: 5%;
+    row-gap: 0px;
+    column-gap: 2px;
+    
+}
+.item
+{
+    
+    background-color: white;
+
+}
+#a1{
+    background-color:yellow;
+    padding: 29px;
+    font-size:30PX;
+    height: 22PX;
+    font-style: normal;
+}
+#d1{
+    font-size: 30px;
+}
+#d2{
+    border:9px solid black;
+    height:0px;
+    width:0px;
+    font-size: 65px;
+    color:white;
+    background-color: red;
+    align-content: center;
+}
+#d3{
+    border:5px white solid;
+    height:auto;
+    width:450px;
+    color:black;
+    justify-content: center;
+    float:right;
+    
+}
+#d4{
+    display: none;
+    background-color:slategray;
+    color:white;
+}
+input{
+    font-size: 20px;
+}
+select{
+    font-size: 20px;
+}
+#e1{
+    background-color: #f2f2f2;
+    border: none;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    /* Shiny effect */
+    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 4px;
+  }
+  
+  #e1:hover {
+    /* Shiny effect on hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+  
+  #e1:active {
+    /* Pressed effect */
+    transform: scale(0.95);
+  }
+  
+  #e1::before {
+    /* Pseudo-element for an icon */
+    content: "\f138";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+  }
+  
+  #e1.success {
+    /* Custom styles for success button */
+    background-color: #2ecc71;
+    color: #fff;
+  }
+  
+  #e1.warning {
+    /* Custom styles for warning button */
+    background-color: #f39c12;
+    color: #fff;
+  }
+  
